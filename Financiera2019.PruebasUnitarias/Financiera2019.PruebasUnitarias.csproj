@@ -51,10 +51,21 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entidades\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Financiera2019.Dominio\Financiera2019.Dominio.csproj">
+      <Project>{137b2b61-5862-4d14-ba5c-176d43974a3c}</Project>
+      <Name>Financiera2019.Dominio</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Financiera2019.Infraestructura.Datos.EF\Financiera2019.Infraestructura.Datos.EF.csproj">
+      <Project>{039390f5-4a3b-4be7-8c50-2247180bc872}</Project>
+      <Name>Financiera2019.Infraestructura.Datos.EF</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
