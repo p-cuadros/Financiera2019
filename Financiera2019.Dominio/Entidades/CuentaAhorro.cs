@@ -72,3 +72,4 @@ namespace Financiera2019.Dominio.Entidades
             Movimientos.Add(movimiento);
         }
     }
+}

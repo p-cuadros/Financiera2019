@@ -1,4 +1,5 @@
 ﻿using Financiera2019.Dominio.Entidades;
+using Financiera2019.Infraestructura.Datos.EF.Mapeos;
 using System.Data.Entity;
 
 namespace Financiera2019.Infraestructura.Datos.EF
@@ -15,6 +16,9 @@ namespace Financiera2019.Infraestructura.Datos.EF
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+            modelBuilder.Configurations.Add(new ClienteMapeo());
+            modelBuilder.Configurations.Add(new CuentaAhorroMapeo());
+            modelBuilder.Configurations.Add(new MovimientoCuentaMapeo());
         }
     }
 }
