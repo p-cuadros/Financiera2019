@@ -9,9 +9,9 @@ namespace Financiera2019.Infraestructura.Datos.EF.Mapeos
         {
             ToTable("TBL_CLIENTES");
             HasKey(k => k.CodigoCliente);
-            Property(p => p.CodigoCliente).IsRequired();
-            Property(p => p.NombreCliente).IsRequired().HasMaxLength(100);
-            Property(p => p.FechaRegistro).IsRequired();
+            Property(p => p.CodigoCliente).HasColumnName("COD_CLIENTE").IsRequired();
+            Property(p => p.NombreCliente).HasColumnName("NOM_CLIENTE").IsRequired().HasMaxLength(100);
+            Property(p => p.FechaRegistro).HasColumnName("FEC_REGISTRO").IsRequired();
         }
     }
 }

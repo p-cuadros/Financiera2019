@@ -9,12 +9,12 @@ namespace Financiera2019.Dominio.Entidades
         public string NumeroCuenta { get; private set; }
         public int CodigoCliente { get; private set; }
         public decimal Saldo { get; private set; }
-        public DateTime FechaCreacion { get; private set; }
+        public DateTime FechaApertura { get; private set; }
         public byte EstadoCuenta { get; private set; }
         public virtual Cliente Propietario { get; private set; }
         public virtual ICollection<MovimientoCuenta> Movimientos { get; private set; }
 
-        private CuentaAhorro()
+        public CuentaAhorro()
         {
             Movimientos = new List<MovimientoCuenta>();
         }
@@ -27,7 +27,7 @@ namespace Financiera2019.Dominio.Entidades
                 Propietario = aoCliente,
                 CodigoCliente = aoCliente.CodigoCliente,
                 Saldo = 0.00M,
-                FechaCreacion = DateTime.Now,
+                FechaApertura = DateTime.Now,
                 EstadoCuenta = 0
             };
             var movimiento = MovimientoCuenta.Generar(1, 0.00M, cuenta);

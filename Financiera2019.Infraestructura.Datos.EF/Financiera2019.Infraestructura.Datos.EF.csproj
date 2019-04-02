@@ -51,10 +51,14 @@
     <Compile Include="Mapeos\ClienteMapeo.cs" />
     <Compile Include="Mapeos\CuentaAhorroMapeo.cs" />
     <Compile Include="Mapeos\MovimientoCuentaMapeo.cs" />
+    <Compile Include="Migrations\201904020053089_v3.cs" />
+    <Compile Include="Migrations\201904020053089_v3.Designer.cs">
+      <DependentUpon>201904020053089_v3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositorios\Repositorio.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\Financiera2019.Dominio\Financiera2019.Dominio.csproj">
       <Project>{137b2b61-5862-4d14-ba5c-176d43974a3c}</Project>
@@ -64,6 +68,11 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201904020053089_v3.resx">
+      <DependentUpon>201904020053089_v3.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -4,17 +4,14 @@ namespace Financiera2019.Dominio.Entidades
 {
     public class MovimientoCuenta //: EntidadBase
     {
-        public int NumeroMovimiento { get; set; }
-        public DateTime FechaMovimiento { get; set; }
-        public byte CodigoTipoOperacion { get; set; }
-        public decimal MontoMovimiento { get; set; }
-        public byte EstadoMovimiento { get; set; }
-        public int IdentificadorCuenta { get; set; }
-        virtual public CuentaAhorro Cuenta { get; set; }
+        public int NumeroMovimiento { get; private set; }
+        public DateTime FechaMovimiento { get; private set; }
+        public byte CodigoTipoOperacion { get; private set; }
+        public decimal MontoMovimiento { get; private set; }
+        public byte EstadoMovimiento { get; private set; }
+        public int IdentificadorCuenta { get; private set; }
+        public virtual CuentaAhorro Cuenta { get; private set; }
 
-        private MovimientoCuenta()
-        {
-        }
         public static MovimientoCuenta Generar(byte abyCodigoTipoOperacion, decimal adcMontoOperacion, CuentaAhorro aoCuenta)
         {
             return new MovimientoCuenta()

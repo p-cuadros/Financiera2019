@@ -9,14 +9,14 @@ namespace Financiera2019.Infraestructura.Datos.EF.Mapeos
         {
             ToTable("TBL_MOVIMIENTOS");
             HasKey(k => k.NumeroMovimiento);
-            Property(p => p.NumeroMovimiento).IsRequired();
-            Property(p => p.IdentificadorCuenta).IsRequired();
-            Property(p => p.FechaMovimiento).IsRequired();
-            Property(p => p.CodigoTipoOperacion).IsRequired();
-            Property(p => p.EstadoMovimiento).IsRequired();
-            Property(p => p.MontoMovimiento).IsRequired();
+            Property(p => p.NumeroMovimiento).HasColumnName("NUM_MOVIMIENTO").IsRequired();
+            Property(p => p.IdentificadorCuenta).HasColumnName("ID_CUENTA").IsRequired();
+            Property(p => p.CodigoTipoOperacion).HasColumnName("COD_TIPO_OPER").IsRequired();
+            Property(p => p.FechaMovimiento).HasColumnName("FEC_MOVIMIENTO").IsRequired();
+            Property(p => p.EstadoMovimiento).HasColumnName("EST_MOVIMIENTO").IsRequired();
+            Property(p => p.MontoMovimiento).HasColumnName("MON_MOVIMIENTO").IsRequired();
 
-            HasRequired(p => p.Cuenta).WithMany().HasForeignKey(f => f.IdentificadorCuenta);
+            HasRequired(m => m.Cuenta).WithMany().HasForeignKey(f => f.IdentificadorCuenta);
 
         }
     }
